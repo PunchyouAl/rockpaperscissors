@@ -5,7 +5,7 @@
 }
 
 body {
-    background-image: radial-gradient(hsl(214, 47%, 23%),hsl(237, 49%, 15%));
+    background-image: radial-gradient(circle at top center, hsl(214, 47%, 23%),hsl(237, 49%, 15%));
     margin: 0;
 }
 
@@ -16,6 +16,8 @@ body {
 .inner {
     width: 80%;
     margin: auto;
+    position: relative;
+    min-height: 500px;
 }
 
 .name {
@@ -48,4 +50,47 @@ body {
 
 .score {
     font-size: 50px;
+}
+
+.rulesButton {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 20px;
+    border: 3px solid rgba(255,255,255,0.5);
+    color: white;
+    border-radius: 15px;
+}
+
+.buttonPicker {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    background-image: url(../images/bg-triangle.svg);
+    width: 800px;
+    height: 600px;
+    margin: auto;
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.buttonPicker .buttonOuter {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.colouredRing {
+    width: 200px;
+    height: 200px;
+    border: red 30px solid;
+    background-color: #ffffff;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
