@@ -1,62 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <link rel="stylesheet" href="style/style.css">
-  
+
   <title>Rock/Paper/Scissors</title>
 
-<section class="outer">
-  <div class="inner">
-    <div class="scoreHolder">
-      <div class="name">Rock<br>Paper<br>Scissors</div>
-      <div class="scoreInner"><div class="label">SCORE</div><div class="score">0</div></div>
-        </div>
-        <div class="rulesButton">
-          Rules
-        </div>
 
-        <div class="buttonPicker">
-          <div class="buttonOuter" id="paper">
-             <div class="colouredRing" data-color="#000000">
-                <img src="images/icon-paper.svg" alt="paperButton">
-             </div>
-          </div>
-          <div class="buttonOuter" id="scissors">
-            <div class="colouredRing" data-color="#000000">
-              <img src="images/icon-scissors.svg" alt="scissorsButton">
-           </div>
-          </div>
-          <div class="buttonOuter" id="rock">
-            <div class="colouredRing" data-color="#000000">
-              <img src="images/icon-rock.svg" alt="rockButton">
-           </div>
-          </div>
-      </div>
-        
-      
-        You Picked
-        The House Picked
-      
-        You Win
-        You Lose
-      
-        Play Again
-  </div>
-</section>
 
-  
+
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  
+
 </head>
+
 <body>
 
+  <section class="outer">
+    <div class="inner">
+      <div class="scoreHolder">
+        <div class="name">Rock<br>Paper<br>Scissors</div>
+        <div class="scoreInner">
+          <div class="label">SCORE</div>
+          <div class="score">0</div>
+        </div>
+      </div>
 
-  
+      <div class="buttonPicker">
+        <div class="buttonHolder" id="paper">
+          <div class="gameButton" data-choose="0">
+            <div class="ringWhite">
+              <img src="images/icon-paper.svg" alt="paperButton">
+            </div>
+          </div>
+        </div>
+        <div class="buttonHolder" id="scissors">
+          <div class="gameButton" data-choose="1">
+            <div class="ringWhite">
+              <img src="images/icon-scissors.svg" alt="scissorsButton">
+            </div>
+          </div>
+        </div>
+        <div class="buttonHolder" id="rock">
+          <div class="gameButton" data-choose="2">
+            <div class="ringWhite">
+              <img src="images/icon-rock.svg" alt="rockButton">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="resultsHolder">
+        You Picked
+        The House Picked
+
+        You Win
+        You Lose
+
+        Play Again
+      </div>
+
+
+      <div class="rulesButton">
+        Rules
+      </div>
+    </div>
+  </section>
+
+  <script src="scripts/script.js"></script>
 
 </body>
+
 </html>
