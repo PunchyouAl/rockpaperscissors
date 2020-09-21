@@ -32,22 +32,22 @@
       </div>
 
       <div class="buttonPicker">
-        <div class="buttonHolder" id="paper">
-          <div class="gameButton" data-choose="0">
+        <div class="buttonHolder">
+          <div class="gameButton" id="paper" data-choose="0">
             <div class="ringWhite">
               <img src="images/icon-paper.svg" alt="paperButton">
             </div>
           </div>
         </div>
-        <div class="buttonHolder" id="scissors">
-          <div class="gameButton" data-choose="1">
+        <div class="buttonHolder">
+          <div class="gameButton" id="scissors" data-choose="1">
             <div class="ringWhite">
               <img src="images/icon-scissors.svg" alt="scissorsButton">
             </div>
           </div>
         </div>
-        <div class="buttonHolder" id="rock">
-          <div class="gameButton" data-choose="2">
+        <div class="buttonHolder">
+          <div class="gameButton" id="rock" data-choose="2">
             <div class="ringWhite">
               <img src="images/icon-rock.svg" alt="rockButton">
             </div>
@@ -55,16 +55,37 @@
         </div>
       </div>
 
-      <div class="resultsHolder">
-        You Picked
-        The House Picked
+      <div class="resultsModal">
+        <div class="pickOuter">
+          <div class="heading">
+            You Picked
+          </div>
+          <div class="pick">
+            <img src="" alt="">
+          </div>
+        </div>
+        <div class="pickOuter">
+          <div class="heading">
+            Opponent Picked
+          </div>
+          <div class="pick">
+            <img src="" alt="">
+          </div>
+        </div>
 
-        You Win
-        You Lose
+        <div class="winStatus">You Win</div>
 
-        Play Again
+        <div class="playAgainButton">Play Again</div>
+
       </div>
 
+      <div class="rulesModal">
+        <div class="modalHead">
+          <div class="heading">Rules</div>
+          <div class="close">X</div>
+        </div>
+        <img src="images/image-rules.svg" alt="rules">
+      </div>
 
       <div class="rulesButton">
         Rules

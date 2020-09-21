@@ -102,15 +102,15 @@ body {
     box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.3);
 }
 
-#paper .gameButton {
+#paper.gameButton {
     background-image: linear-gradient(to bottom, hsl(230, 89%, 62%), hsl(230, 89%, 65%));
 }
 
-#scissors .gameButton {
+#scissors.gameButton {
     background-image: linear-gradient(to bottom, hsl(39, 89%, 49%), hsl(40, 84%, 53%));
 }
 
-#rock .gameButton {
+#rock.gameButton {
     background-image: linear-gradient(to bottom, hsl(349, 71%, 52%), hsl(349, 70%, 56%));
 }
 
@@ -124,4 +124,46 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+
+.resultsModal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -30%);
+    opacity: 0;
+    background: #ffffff;
+    padding: 50px;
+    transition-duration: 0.2s;
+    pointer-events: none;
+}
+
+.resultsModal.active {
+    transform: translate(-50%, -50%);
+    opacity: 1;
+    pointer-events: all;
+}
+
+.rulesModal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -30%);
+    opacity: 0;
+    background: #ffffff;
+    padding: 50px;
+    transition-duration: 0.2s;
+    pointer-events: none;
+}
+
+.rulesModal.active {
+    transform: translate(-50%, -50%);
+    opacity: 1;
+    pointer-events: all;
+}
+
+.modalHead {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }

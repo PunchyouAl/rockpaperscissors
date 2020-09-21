@@ -1,5 +1,9 @@
 const scoreCounter = document.querySelector('.score');
+const rulesButton = document.querySelector('.rulesButton');
 const gameButtons = document.querySelectorAll('.gameButton');
+const rulesModal = document.querySelector('.rulesModal');
+const resultsModal = document.querySelector('.resultsModal');
+let status = '';
 
 let score = 0;
 
@@ -7,7 +11,7 @@ function play() {
     
     const userChoice = parseInt(this.dataset.choose);
     const randomChoice = Math.floor(Math.random() * 3);
-    let status = '';
+    
 
     switch(userChoice) {
         case 0:
@@ -62,7 +66,16 @@ function play() {
       console.log({userChoice, randomChoice, status});
 
       updateScore(status);
-      
+      handleModal();
+  
+}
+
+function handleModal(e) {
+    
+    resultsModal.classList.add('active');
+
+    console.log(`You ${status}`);
+
 }
 
 function updateScore(status) {
@@ -73,3 +86,4 @@ function updateScore(status) {
 }
 
 gameButtons.forEach(button => button.addEventListener('click', play));
+rulesButton.addEventListener('click', () => {rulesModal.classList.toggle('active')});
