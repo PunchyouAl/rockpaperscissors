@@ -81,6 +81,13 @@ body {
     background-size: 50%;
     background-repeat: no-repeat;
     background-position: center;
+    transition-duration: 0.2s;
+}
+
+.buttonPicker.hidden {
+    opacity: 0;
+    transform: translateY(-50px);
+    pointer-events: none;
 }
 
 .buttonPicker .buttonHolder {
@@ -136,18 +143,38 @@ body {
     position: absolute;
     top: 50%;
     left: 50%;
+    width: 100%;
     transform: translate(-50%, -30%);
     opacity: 0;
-    background: #ffffff;
+    background: transparent;
+    color: #ffffff;
     padding: 50px;
     transition-duration: 0.2s;
     pointer-events: none;
+    text-transform: uppercase;
+    text-align: center;
 }
 
 .resultsModal.active {
     transform: translate(-50%, -50%);
     opacity: 1;
     pointer-events: all;
+}
+
+.winStatus {
+    color: #ffffff;
+    font-size: 40px;
+    line-height: 0.8;
+}
+
+.playAgainButton {
+    margin-top: 30px;
+    padding: 20px;
+    border: 3px solid rgba(255,255,255,0.5);
+    color: white;
+    border-radius: 15px;
+    cursor: pointer;
+    transition-duration: 0.2s;
 }
 
 .pickOuter {
@@ -161,8 +188,25 @@ body {
     text-align: center;
 }
 
-.pickOuter .pickInner:nth-child(1) {
+.pickOuter .pickInner .pick {
+    margin-top: 20px;
+}
+
+.pickOuter .pickInner:first-child {
     padding-right: 20px;
+}
+
+.pickOuter .pickInner:last-child {
+    padding-left: 20px;
+}
+
+.gameButton.won::before {
+    content: '';
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    background-image: radial-gradient(rgb(255 255 255 / 0.5) 0%, rgb(255 255 255 / 0.5) 40%, rgb(255 255 255 / 0.2) 40%, rgb(255 255 255 / 0.2) 50%, rgb(255 255 255 / 0.1) 50%, rgb(255 255 255 / 0.1) 60%, transparent 60%);
+    z-index: -1;
 }
 
 
