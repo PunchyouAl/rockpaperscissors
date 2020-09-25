@@ -60,6 +60,12 @@ body {
     border: 3px solid rgba(255,255,255,0.5);
     color: white;
     border-radius: 15px;
+    cursor: pointer;
+    transition-duration: 0.2s;
+}
+
+.rulesButton:hover {
+    border: 3px solid rgba(255,255,255,1);
 }
 
 .buttonPicker {
@@ -69,8 +75,8 @@ body {
     justify-content: space-around;
     align-items: center;
     background-image: url(../images/bg-triangle.svg);
-    width: 800px;
-    height: 600px;
+    width: 580px;
+    height: 500px;
     margin: auto;
     background-size: 50%;
     background-repeat: no-repeat;
@@ -143,6 +149,22 @@ body {
     opacity: 1;
     pointer-events: all;
 }
+
+.pickOuter {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.pickOuter .pickInner {
+    text-align: center;
+}
+
+.pickOuter .pickInner:nth-child(1) {
+    padding-right: 20px;
+}
+
 
 .rulesModal {
     position: absolute;

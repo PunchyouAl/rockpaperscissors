@@ -3,14 +3,16 @@ const rulesButton = document.querySelector('.rulesButton');
 const gameButtons = document.querySelectorAll('.gameButton');
 const rulesModal = document.querySelector('.rulesModal');
 const resultsModal = document.querySelector('.resultsModal');
-let status = '';
+const imgArr = ['<div class="gameButton" id="paper" data-choose="0"><div class="ringWhite"><img src="images/icon-paper.svg" alt="paperButton"></div></div>', '<div class="gameButton" id="scissors" data-choose="1"><div class="ringWhite"><img src="images/icon-scissors.svg" alt="scissorsButton"></div></div>', '<div class="gameButton" id="rock" data-choose="2"><div class="ringWhite"><img src="images/icon-rock.svg" alt="rockButton"></div></div>']
 
+let status = '';
 let score = 0;
 
 function play() {
     
     const userChoice = parseInt(this.dataset.choose);
     const randomChoice = Math.floor(Math.random() * 3);
+    const clicked = this;
     
 
     switch(userChoice) {
@@ -63,15 +65,27 @@ function play() {
           // code block
       }
 
-      console.log({userChoice, randomChoice, status});
-
       updateScore(status);
-      handleModal();
+      handleModal(userChoice, randomChoice);
   
 }
 
-function handleModal(e) {
-    
+function handleModal(user, ran) {
+
+    const userArea = resultsModal.querySelector('#userPick');
+    const oppArea = resultsModal.querySelector('#oppPick');
+
+    userArea.innerHTML = '';
+    oppArea.innerHTML = '';
+
+    let a = document.createElement('div');
+    a.innerHTML = imgArr[user];
+    userArea.appendChild(a);
+
+    let b = document.createElement('div');
+    b.innerHTML = imgArr[ran];
+    oppArea.appendChild(b);
+
     resultsModal.classList.add('active');
 
     console.log(`You ${status}`);
