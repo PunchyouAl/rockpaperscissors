@@ -6,10 +6,12 @@ const resultsModal = document.querySelector('.resultsModal');
 const buttonPicker = document.querySelector('.buttonPicker');
 const winStatus = document.querySelector('.winStatus');
 const playAgain = document.querySelector('.playAgainButton');
+const closeButton = document.querySelector('.close');
 const imgArr = ['<div class="gameButton" id="paper" data-choose="0"><div class="ringWhite"><img src="images/icon-paper.svg" alt="paperButton"></div></div>', '<div class="gameButton" id="scissors" data-choose="1"><div class="ringWhite"><img src="images/icon-scissors.svg" alt="scissorsButton"></div></div>', '<div class="gameButton" id="rock" data-choose="2"><div class="ringWhite"><img src="images/icon-rock.svg" alt="rockButton"></div></div>']
 
 let status = '';
 let score = 0;
+let winningButton;
 
 function play() {
     
@@ -70,19 +72,17 @@ function play() {
 
       buttonPicker.classList.add('hidden');
 
-      console.log({status});
+      
 
       updateScore(status);
-      handleModal(userChoice, randomChoice);
+      handleModal(userChoice, randomChoice, status);
   
 }
 
-function handleModal(user, ran) {
+function handleModal(user, ran, stat) {
 
     const userArea = resultsModal.querySelector('#userPick');
     const oppArea = resultsModal.querySelector('#oppPick');
-
-    let winningButton;
 
     userArea.innerHTML = '';
     oppArea.innerHTML = '';
@@ -97,12 +97,13 @@ function handleModal(user, ran) {
 
     resultsModal.classList.add('active');
 
-    winStatus.innerHTML = `You ${status}`;
+    winStatus.innerHTML = `You ${stat}`;
     
+    console.log({stat});
 
-    if (status = 'win') {
+    if (stat == 'win') {
         winningButton = userArea.querySelector('.gameButton');
-    } else if (status = 'lose') {
+    } else if (stat == 'lose') {
         winningButton = oppArea.querySelector('.gameButton');
     }
 
@@ -125,3 +126,4 @@ function init() {
 gameButtons.forEach(button => button.addEventListener('click', play));
 rulesButton.addEventListener('click', () => {rulesModal.classList.toggle('active')});
 playAgain.addEventListener('click', init);
+closeButton.addEventListener('click', () => {rulesModal.classList.remove('active')});

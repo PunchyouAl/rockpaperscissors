@@ -11,13 +11,26 @@ body {
 
 .outer {
     height: 100vh;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-image: radial-gradient(circle at top center, hsl(214, 47%, 23%),hsl(237, 49%, 15%));
+    overflow: hidden;
 }
 
 .inner {
     width: 80%;
-    margin: auto;
+    margin: 50px auto;
     position: relative;
     min-height: 500px;
+}
+
+@media screen and (max-width: 676px) {
+    .inner {
+        width: 95%;
+        margin-top: 10px;
+    }
 }
 
 .name {
@@ -25,6 +38,12 @@ body {
     font-size: 40px;
     line-height: 0.8;
     text-transform: uppercase;
+}
+
+@media screen and (max-width: 676px) {
+    .name {
+        font-size: 22px;
+    }
 }
 
 .scoreHolder {
@@ -36,6 +55,12 @@ body {
     padding: 20px;
 }
 
+@media screen and (max-width: 676px) {
+    .scoreHolder {
+        padding: 7px;
+    }
+}
+
 .scoreInner {
     text-align: center;
     background: #ffffff;
@@ -43,13 +68,31 @@ body {
     border-radius: 13px;
 }
 
+@media screen and (max-width: 676px) {
+    .scoreInner {
+        padding: 10px 15px;
+    }
+}
+
 .scoreInner .label {
     font-size: 16px;
     letter-spacing: 2px;
 }
 
+@media screen and (max-width: 676px) {
+    .scoreInner .label {
+        font-size: 10px;
+    }
+}
+
 .score {
     font-size: 50px;
+}
+
+@media screen and (max-width: 676px) {
+    .score {
+        font-size: 38px;
+    }
 }
 
 .rulesButton {
@@ -84,6 +127,13 @@ body {
     transition-duration: 0.2s;
 }
 
+@media screen and (max-width: 676px) {
+    .buttonPicker {
+        width: 100%;
+        height: 300px;
+    }
+}
+
 .buttonPicker.hidden {
     opacity: 0;
     transform: translateY(-50px);
@@ -110,7 +160,14 @@ body {
     transition-duration: 0.2s;
 }
 
-.gameButton:hover {
+@media screen and (max-width: 676px) {
+    .gameButton {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+.buttonPicker .gameButton:hover {
     transform: translateY(-7px);
     box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.3);
 }
@@ -139,6 +196,12 @@ body {
     justify-content: center;
 }
 
+@media screen and (max-width: 676px) {
+    .ringWhite {
+        margin: 0;
+    }
+}
+
 .resultsModal {
     position: absolute;
     top: 50%;
@@ -161,20 +224,41 @@ body {
     pointer-events: all;
 }
 
+.resultsModal .gameButton {
+    cursor: auto;
+}
+
 .winStatus {
     color: #ffffff;
     font-size: 40px;
     line-height: 0.8;
 }
 
+.playAgain {
+    z-index: 10;
+}
+
+@media screen and (max-width: 676px) {
+    .playAgain {
+        order: 3;
+        margin-top: 30px;
+    }
+}
+
 .playAgainButton {
-    margin-top: 30px;
-    padding: 20px;
-    border: 3px solid rgba(255,255,255,0.5);
-    color: white;
-    border-radius: 15px;
+    margin-top: 15px;
+    padding: 11px;
+    background-color: #ffffff;
+    color: black;
+    border-radius: 7px;
     cursor: pointer;
     transition-duration: 0.2s;
+}
+
+.playAgainButton:hover {
+
+    border: 3px solid rgba(255,255,255,1);
+    
 }
 
 .pickOuter {
@@ -184,8 +268,26 @@ body {
     justify-content: center;
 }
 
+@media screen and (max-width: 676px) {
+    .pickOuter {
+        flex-wrap: wrap;
+    }
+}
+
 .pickOuter .pickInner {
     text-align: center;
+}
+
+@media screen and (max-width: 676px) {
+    .pickOuter .pickInner {
+        padding-left: 0!important;
+        padding-right: 0!important;
+        width: 50%;
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        justify-content: center;
+    }
 }
 
 .pickOuter .pickInner .pick {
@@ -200,12 +302,18 @@ body {
     padding-left: 20px;
 }
 
+@media screen and (max-width: 676px) {
+    .pickOuter .pickInner .heading {
+        margin-top: 15px;
+    }
+}
+
 .gameButton.won::before {
     content: '';
     position: absolute;
     width: 200%;
     height: 200%;
-    background-image: radial-gradient(rgb(255 255 255 / 0.5) 0%, rgb(255 255 255 / 0.5) 40%, rgb(255 255 255 / 0.2) 40%, rgb(255 255 255 / 0.2) 50%, rgb(255 255 255 / 0.1) 50%, rgb(255 255 255 / 0.1) 60%, transparent 60%);
+    background-image: radial-gradient(rgb(255 255 255 / 0.07) 0%, rgb(255 255 255 / 0.07) 50%, rgb(255 255 255 / 0.05) 50%, rgb(255 255 255 / 0.05) 60%, rgb(255 255 255 / 0.01) 60%, rgb(255 255 255 / 0.01) 70%, transparent 70%);
     z-index: -1;
 }
 
@@ -220,16 +328,61 @@ body {
     padding: 50px;
     transition-duration: 0.2s;
     pointer-events: none;
+    border-radius: 10px;
+}
+
+@media screen and (max-width: 676px) {
+    .rulesModal {
+        position: absolute;
+        top: -10px;
+        left: -8px;
+        transform: translate(0%, 0%);
+        padding: 16px;
+        border-radius: 0px;
+    }
+    
+}
+
+.rulesModal img {
+    max-width: 100%;
 }
 
 .rulesModal.active {
-    transform: translate(-50%, -50%);
+    /* transform: translate(-50%, -50%); */
     opacity: 1;
     pointer-events: all;
+}
+
+@media screen and (max-width: 676px) {
+    .rulesModal {
+        position: absolute;
+        top: -10px;
+        left: -8px;
+        transform: translate(0%, 0%);
+        padding: 16px;
+        border-radius: 0px;
+        width: 106%;
+        height: 100vh;
+        box-sizing: border-box;
+    }
+    
 }
 
 .modalHead {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 50px;
+    color: #171c3f;
+    font-size: 40px;
+    line-height: 0.8;
+    text-transform: uppercase;
+}
+
+.close {
+    padding: 9px;
+    border: 3px solid rgb(220 220 220);
+    border-radius: 15px;
+    cursor: pointer;
+    transition-duration: 0.2s;
 }
